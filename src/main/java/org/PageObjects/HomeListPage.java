@@ -15,4 +15,8 @@ public class HomeListPage extends BasePage {
     public HomeListPage(AndroidDriver driver) {
         super(driver);
     }
+
+    public void clickButton() {
+        contentOption.click();
+    }
 }

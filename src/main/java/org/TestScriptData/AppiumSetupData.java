@@ -2,12 +2,12 @@ package org.TestScriptData;
 
 public class AppiumSetupData {
 
-    String appiumPath;
-    String ipAddress;
-    int port;
-    String emulatorDeviceName;
-    String sysProperty;
-    String apkPath;
+    private String appiumPath;
+    private String ipAddress;
+    private int port;
+    private String emulatorDeviceName;
+    private String sysProperty;
+    private String apkPath;
 
 
     public String getAppiumPath() {

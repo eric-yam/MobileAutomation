@@ -1,5 +1,6 @@
 package TestScripts;
 
+import org.PageObjects.BottomNavBar;
 import org.PageObjects.HomeListPage;
 import org.TestScriptData.LoginTestData;
 import org.TestScriptData.TestDataFactory;
@@ -21,7 +22,10 @@ public class LoginTest extends BaseTest {
     @Test
     public void simpleTest_2() {
 //        WebElement temp = driver.findElement(AppiumBy.id("android:id/list")
-        HomeListPage homeListPage = new HomeListPage(driver);
+//        HomeListPage homeListPage = new HomeListPage(driver);
+
+
+        BottomNavBar bnb = new BottomNavBar(driver);
 
     }
 }

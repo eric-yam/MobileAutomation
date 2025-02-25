@@ -2,9 +2,9 @@
   "appiumSetup": {
     "appiumPath": "C:\\Users\\Eric\\AppData\\Roaming\\npm\\node_modules\\appium\\build\\lib\\main.js",
     "ipAddress": "127.0.0.1",
-    "port": 4723,
+    "port": 4002,
     "emulatorDeviceName": "Pixel_9_API_35",
     "sysProperty": "user.dir",
-    "apkPath": "\\resources\\ApiDemos-debug.apk"
+    "apkPath": "\\resources\\android.wdio.native.app.v1.0.8.apk"
   }
 }

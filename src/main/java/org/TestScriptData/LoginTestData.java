@@ -1,8 +1,8 @@
 package org.TestScriptData;
 
 public class LoginTestData {
-    String username;
-    String password;
+    private String username;
+    private String password;
 
     public String getUsername() {
         return username;
