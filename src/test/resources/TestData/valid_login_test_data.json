@@ -1,0 +1,17 @@
+{
+  "validUser1": {
+    "email": "temp1@email.com",
+    "password": "secret_sauce",
+    "expectedStatus": true
+  },
+  "validUser2": {
+    "email": "temp2@email.com",
+    "password": "awlekrjanwlekrnawe",
+    "expectedStatus": true
+  },
+  "validUser3": {
+    "email": "temp3@email.com",
+    "password": "passdoesntmatter",
+    "expectedStatus": true
+  }
+}

@@ -41,7 +41,6 @@ public class TestDataFactory {
         return deserializedObjs;
     }
 
-
     @DataProvider(name = "AppiumSetupData")
     public static Iterator<AppiumSetupData> appiumSetupDataProvider() {
         JsonObject jsonObj = readJson("src/test/resources/TestData/appium_setup_data.json");
@@ -51,10 +50,22 @@ public class TestDataFactory {
     }
 
 //        Alternative Approach For return type Iterator<Object[]> or Object[][] for DataProviders
-    @DataProvider(name = "LoginData")
-    public static Iterator<Object[]> loginTestDataProvider() {
-        JsonObject jsonObj = readJson("src/test/resources/TestData/login_test_data.json");
+    @DataProvider(name = "InvalidLoginData")
+    public static Iterator<Object[]> invalidLoginTestDataProvider() {
+        JsonObject jsonObj = readJson("src/test/resources/TestData/invalid_login_test_data.json");
 
+        return listLoginData(jsonObj).iterator();
+    }
+
+    @DataProvider(name = "ValidLoginData")
+    public static Iterator<Object[]> validLoginTestDataProvider() {
+        JsonObject jsonObj = readJson("src/test/resources/TestData/valid_login_test_data.json");
+
+        return listLoginData(jsonObj).iterator();
+    }
+
+    //Helper method
+    public static List<Object[]> listLoginData(JsonObject jsonObj) {
         Object[] temporary = mapJsonToClass(jsonObj, LoginTestData.class).toArray();
         List<Object[]> list = new ArrayList<>();
 
@@ -62,6 +73,6 @@ public class TestDataFactory {
             list.add(new Object[]{obj});
         }
 
-        return list.iterator();
+        return list;
     }
 }

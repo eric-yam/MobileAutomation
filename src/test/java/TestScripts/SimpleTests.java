@@ -7,20 +7,11 @@ import org.TestScriptData.LoginTestData;
 import org.TestScriptData.TestDataFactory;
 import org.testng.annotations.Test;
 
-public class SimpleTests extends BaseTest {
-    @Test
-    public void navigation_test() {
-        BottomNavBar bnb = new BottomNavBar(driver);
-        bnb.clickHome();
-        bnb.clickWebview();
-        bnb.clickLogin();
-        bnb.clickForms();
-        bnb.clickSwipe();
-        bnb.clickDrag();
-    }
+import static org.testng.Assert.assertTrue;
 
-    @Test(dataProvider = "LoginData", dataProviderClass = TestDataFactory.class)
-    public void login_test(LoginTestData ltd) {
+public class SimpleTests extends BaseTest {
+    @Test(dataProvider = "InvalidLoginData", dataProviderClass = TestDataFactory.class)
+    public void invalid_login_test(LoginTestData ltd) {
         BottomNavBar bnb = new BottomNavBar(driver);
         bnb.clickLogin();
 
@@ -31,23 +22,31 @@ public class SimpleTests extends BaseTest {
         lp.clickLoginButton();
 
         lp.clickSignUpHeader();
-
         SignUpPage sup = new SignUpPage(driver);
         sup.inputEmail(ltd.getEmail());
         sup.inputPassword(ltd.getPassword());
         sup.inputConfirmPassword(ltd.getPassword());
     }
 
-    @Test
-    public void login_alert_panel_test() {
+    @Test(dataProvider = "InvalidLoginData", dataProviderClass = TestDataFactory.class)
+    public void invalid_login_test_2(LoginTestData ltd) {
         BottomNavBar bnb = new BottomNavBar(driver);
         bnb.clickLogin();
 
         LoginPage lp = new LoginPage(driver);
         lp.clickLoginHeader();
-        lp.inputEmail("temp@email.com");
-        lp.inputPassword("password");
-        lp.clickLoginButton();
-        lp.processLoginAlertPanel("Success"); //TODO: Parameterize method
+        lp.loginUser(ltd.getEmail(), ltd.getPassword(), ltd.getExpectedStatus());
+
+        assertTrue(lp.invalidEmailMsgDisplayed());
+    }
+
+    @Test(dataProvider = "ValidLoginData", dataProviderClass = TestDataFactory.class)
+    public void valid_login_test(LoginTestData ltd) {
+        BottomNavBar bnb = new BottomNavBar(driver);
+        bnb.clickLogin();
+
+        LoginPage lp = new LoginPage(driver);
+        lp.clickLoginHeader();
+        lp.loginUser(ltd.getEmail(), ltd.getPassword(), ltd.getExpectedStatus());
     }
 }

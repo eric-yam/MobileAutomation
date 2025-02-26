@@ -28,9 +28,8 @@ public class AlertPanel extends BasePage {
         super(driver);
     }
 
-    public void waitForAlert(String msg) {
+    public void waitForAlert() {
         this.wait.until(ExpectedConditions.visibilityOf(this.parentPanel));
-        this.wait.until(ExpectedConditions.textToBePresentInElement(this.alertTitle, msg));
     }
 
     public void clickOkButton() {

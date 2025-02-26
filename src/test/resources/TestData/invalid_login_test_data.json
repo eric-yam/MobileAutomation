@@ -1,0 +1,17 @@
+{
+  "invalidUser1": {
+    "email": "sdfnglskdjfglsdkf",
+    "password": "secret_sauce",
+    "expectedStatus": false
+  },
+  "invalidUser2": {
+    "email": "standard_user",
+    "password": "awlekrjanwlekrnawe",
+    "expectedStatus": false
+  },
+  "invalidUser3": {
+    "email": "invalid_user",
+    "password": "invalid_password",
+    "expectedStatus": false
+  }
+}
