@@ -27,27 +27,27 @@ public class BottomNavBar extends BasePage {
         super(driver);
     }
 
-    private void clickHome() {
+    public void clickHome() {
         this.home.click();
     }
 
-    private void clickWebview() {
+    public void clickWebview() {
         this.webView.click();
     }
 
-    private void clickLogin() {
+    public void clickLogin() {
         this.login.click();
     }
 
-    private void clickForms() {
+    public void clickForms() {
         this.forms.click();
     }
 
-    private void clickSwipe() {
+    public void clickSwipe() {
         this.swipe.click();
     }
 
-    private void clickDrag() {
+    public void clickDrag() {
         this.drag.click();
     }
 }

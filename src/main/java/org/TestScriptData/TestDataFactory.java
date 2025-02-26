@@ -51,7 +51,7 @@ public class TestDataFactory {
     }
 
 //        Alternative Approach For return type Iterator<Object[]> or Object[][] for DataProviders
-    @DataProvider(name = "LoginTest")
+    @DataProvider(name = "LoginData")
     public static Iterator<Object[]> loginTestDataProvider() {
         JsonObject jsonObj = readJson("src/test/resources/TestData/login_test_data.json");
 

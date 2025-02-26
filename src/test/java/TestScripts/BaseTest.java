@@ -63,7 +63,8 @@ public class BaseTest {
     @AfterTest
     public void cleanUp() {
         driver.quit();
-        appiumServer.close();
+        appiumServer.stop();
+//        appiumServer.close();
     }
 
 

@@ -1,14 +1,14 @@
 {
   "invalidUser1": {
-    "username": "sdfnglskdjfglsdkf",
+    "email": "sdfnglskdjfglsdkf",
     "password": "secret_sauce"
   },
   "invalidUser2": {
-    "username": "standard_user",
+    "email": "standard_user",
     "password": "awlekrjanwlekrnawe"
   },
   "invalidUser3": {
-    "username": "invalid_user",
+    "email": "invalid_user",
     "password": "invalid_password"
   }
 }

@@ -1,16 +1,14 @@
 package TestScripts;
 
-import org.PageObjects.BottomNavBar;
-import org.PageObjects.HomeListPage;
 import org.TestScriptData.LoginTestData;
 import org.TestScriptData.TestDataFactory;
 import org.testng.annotations.Test;
 
 public class LoginTest extends BaseTest {
 
-    @Test(dataProvider = "LoginTest", dataProviderClass = TestDataFactory.class)
+    @Test(dataProvider = "LoginData", dataProviderClass = TestDataFactory.class)
     public void test_01(LoginTestData ltd) {
-        System.out.println(ltd.getUsername());
+        System.out.println(ltd.getEmail());
         System.out.println(ltd.getPassword());
     }
 
@@ -19,13 +17,4 @@ public class LoginTest extends BaseTest {
         System.out.println("Simple Test Method.");
     }
 
-    @Test
-    public void simpleTest_2() {
-//        WebElement temp = driver.findElement(AppiumBy.id("android:id/list")
-//        HomeListPage homeListPage = new HomeListPage(driver);
-
-
-        BottomNavBar bnb = new BottomNavBar(driver);
-
-    }
 }
