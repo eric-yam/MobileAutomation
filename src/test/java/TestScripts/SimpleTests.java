@@ -1,6 +1,6 @@
 package TestScripts;
 
-import org.PageObjects.BottomNavBar;
+import org.PageObjects.BottomNavigationBar.BottomNavBar;
 import org.PageObjects.Login.LoginPage;
 import org.PageObjects.Login.SignUpPage;
 import org.TestScriptData.LoginTestData;
@@ -36,5 +36,18 @@ public class SimpleTests extends BaseTest {
         sup.inputEmail(ltd.getEmail());
         sup.inputPassword(ltd.getPassword());
         sup.inputConfirmPassword(ltd.getPassword());
+    }
+
+    @Test
+    public void login_alert_panel_test() {
+        BottomNavBar bnb = new BottomNavBar(driver);
+        bnb.clickLogin();
+
+        LoginPage lp = new LoginPage(driver);
+        lp.clickLoginHeader();
+        lp.inputEmail("temp@email.com");
+        lp.inputPassword("password");
+        lp.clickLoginButton();
+        lp.processLoginAlertPanel("Success"); //TODO: Parameterize method
     }
 }

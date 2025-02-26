@@ -1,7 +1,8 @@
-package org.PageObjects;
+package org.PageObjects.BottomNavigationBar;
 
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
+import org.PageObjects.BasePage;
 import org.openqa.selenium.WebElement;
 
 public class BottomNavBar extends BasePage {
