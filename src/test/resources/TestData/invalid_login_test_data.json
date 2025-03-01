@@ -2,16 +2,23 @@
   "invalidUser1": {
     "email": "sdfnglskdjfglsdkf",
     "password": "secret_sauce",
-    "expectedStatus": false
+    "expectedErrorMsgs": [
+      "Please enter a valid email address"
+    ]
   },
   "invalidUser2": {
-    "email": "standard_user",
-    "password": "awlekrjanwlekrnawe",
-    "expectedStatus": false
+    "email": "standard_user@email.com",
+    "password": "",
+    "expectedErrorMsgs": [
+      "Please enter at least 8 characters"
+    ]
   },
   "invalidUser3": {
-    "email": "invalid_user",
-    "password": "invalid_password",
-    "expectedStatus": false
+    "email": "",
+    "password": "",
+    "expectedErrorMsgs": [
+      "Please enter a valid email address",
+      "Please enter at least 8 characters"
+    ]
   }
 }

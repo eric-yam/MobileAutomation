@@ -1,0 +1,27 @@
+{
+  "invalidUser1": {
+    "email": "sdfnglskdjfglsdkf",
+    "password": "secret_sauce",
+    "confirmPassword": "secret_sauce",
+    "expectedErrorMsgs": [
+      "Please enter a valid email address"
+    ]
+  },
+  "invalidUser2": {
+    "email": "invalid@email.com",
+    "password": "abc",
+    "confirmPassword": "abc",
+    "expectedErrorMsgs": [
+      "Please enter at least 8 characters",
+      "Please enter the same password"
+    ]
+  },
+  "invalidUser3": {
+    "email": "invalid@email.com",
+    "password": "passworddo",
+    "confirmPassword": "notmatch",
+    "expectedErrorMsgs": [
+      "Please enter the same password"
+    ]
+  }
+}

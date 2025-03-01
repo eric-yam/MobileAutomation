@@ -1,0 +1,17 @@
+{
+  "validUserSignUp1": {
+    "email": "temp1@email.com",
+    "password": "secret_sauce",
+    "confirmPassword": "secret_sauce"
+  },
+  "validUserSignUp2": {
+    "email": "temp2@email.com",
+    "password": "awlekrjanwlekrnawe",
+    "confirmPassword": "awlekrjanwlekrnawe"
+  },
+  "validUserSignUp3": {
+    "email": "temp3@email.com",
+    "password": "passdoesntmatter",
+    "confirmPassword": "passdoesntmatter"
+  }
+}

@@ -2,9 +2,7 @@ package org.PageObjects.Login;
 
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
-import org.Panels.AlertPanel;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class LoginPage extends LoginHomePage {
     @AndroidFindBy(accessibility = "button-LOGIN")
@@ -18,24 +16,22 @@ public class LoginPage extends LoginHomePage {
         super(driver);
     }
 
-    public void loginUser(String email, String password, boolean successLogin) {
+    public void fillLoginPage(String email, String password) {
+        /**
+         * Cases:
+         * Invalid Email
+         * Invalid Password (Empty)
+         * Invalid Password (too short)
+         */
+
         this.inputEmail(email);
         this.inputPassword(password);
         this.clickLoginButton();
-
-        if (successLogin) {
-            this.processLoginAlertPanel();
-        }
+        this.processAlertPanel();
     }
 
     public boolean invalidEmailMsgDisplayed() {
         return !this.invalidEmailPromptMsg.getText().isEmpty();
-    }
-
-    public void processLoginAlertPanel() {
-        AlertPanel loginAlertPanel = new AlertPanel(this.driver);
-        loginAlertPanel.waitForAlert();
-        loginAlertPanel.clickOkButton();
     }
 
     public void clickLoginButton() {

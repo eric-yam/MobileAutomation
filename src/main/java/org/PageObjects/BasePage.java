@@ -13,7 +13,7 @@ public class BasePage {
 
     public BasePage(AndroidDriver driver) {
         this.driver = driver;
-        this.wait = new WebDriverWait(this.driver, Duration.ofSeconds(5));
+        this.wait = new WebDriverWait(this.driver, Duration.ofSeconds(7));
 
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
     }

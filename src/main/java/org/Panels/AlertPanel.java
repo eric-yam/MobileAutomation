@@ -28,8 +28,17 @@ public class AlertPanel extends BasePage {
         super(driver);
     }
 
-    public void waitForAlert() {
-        this.wait.until(ExpectedConditions.visibilityOf(this.parentPanel));
+    public boolean isAlertDisplayed() {
+        try {
+            WebElement el = this.wait.until(ExpectedConditions.visibilityOf(this.parentPanel));
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+    public void waitForExpectedAlertMsg(String msg) {
+        this.wait.until(ExpectedConditions.textToBePresentInElement(this.alertTitle, msg));
     }
 
     public void clickOkButton() {

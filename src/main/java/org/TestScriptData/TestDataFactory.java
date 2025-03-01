@@ -49,7 +49,7 @@ public class TestDataFactory {
         return asdList.iterator();
     }
 
-//        Alternative Approach For return type Iterator<Object[]> or Object[][] for DataProviders
+    // Alternative Approach For return type Iterator<Object[]> or Object[][] for DataProviders
     @DataProvider(name = "InvalidLoginData")
     public static Iterator<Object[]> invalidLoginTestDataProvider() {
         JsonObject jsonObj = readJson("src/test/resources/TestData/invalid_login_test_data.json");
@@ -64,9 +64,23 @@ public class TestDataFactory {
         return listLoginData(jsonObj).iterator();
     }
 
+    @DataProvider(name = "ValidSignUpData")
+    public static Iterator<Object[]> validSignUpTestDataProvider() {
+        JsonObject jsonObj = readJson("src/test/resources/TestData/valid_sign_up_test_data.json");
+
+        return listLoginData(jsonObj).iterator();
+    }
+
+    @DataProvider(name = "InvalidSignUpData")
+    public static Iterator<Object[]> invalidSignUpTestDataProvider() {
+        JsonObject jsonObj = readJson("src/test/resources/TestData/invalid_sign_up_test_data.json");
+
+        return listLoginData(jsonObj).iterator();
+    }
+
     //Helper method
     public static List<Object[]> listLoginData(JsonObject jsonObj) {
-        Object[] temporary = mapJsonToClass(jsonObj, LoginTestData.class).toArray();
+        Object[] temporary = mapJsonToClass(jsonObj, LoginHomeTestData.class).toArray();
         List<Object[]> list = new ArrayList<>();
 
         for (Object obj : temporary) {
